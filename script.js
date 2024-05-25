@@ -5,12 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function smoothScroll(event) {
-        event.preventDefault();
-        const targetId = event.currentTarget.getAttribute('href').substring(1);
-        const targetPosition = document.getElementById(targetId).offsetTop - 60;
-        window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-        });
-    }
-});
+        if (event.currentTarget.hostname === window.location.hostname && event.currentTarget.pathname === window.location.pathname) {
+            event.preventDefault();
+            const targetId = event.currentTarget.getAttribute('href').substring(1);
+            const targetPosition = document.getElementById(targetId).offsetTop - 60;
+            window.scrollTo
