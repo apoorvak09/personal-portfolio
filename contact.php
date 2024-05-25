@@ -1,17 +1,13 @@
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $message = htmlspecialchars($_POST['message']);
+<?php include 'header.php'; ?>
 
-    $to = "your-email@example.com";
-    $subject = "New message from $name";
-    $body = "Name: $name\nEmail: $email\nMessage:\n$message";
+<section id="contact">
+    <h2>Contact</h2>
+    <form action="php/contact.php" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+</section>
 
-    if (mail($to, $subject, $body)) {
-        echo "Message sent successfully!";
-    } else {
-        echo "Failed to send message.";
-    }
-}
-?>
+<?php include 'footer.php'; ?>
