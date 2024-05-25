@@ -9,4 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             const targetId = event.currentTarget.getAttribute('href').substring(1);
             const targetPosition = document.getElementById(targetId).offsetTop - 60;
-            window.scrollTo
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }
+});
