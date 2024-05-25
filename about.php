@@ -7,17 +7,7 @@
     <link rel="stylesheet" href="css/styles.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="about.php">About Me</a></li>
-                <li><a href="projects.php">Projects</a></li>
-                <li><a href="skills.php">Skills</a></li>
-                <li><a href="contact.php">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php include 'header.php'; ?>
     
     <main>
         <section id="about">
@@ -26,6 +16,6 @@
         </section>
     </main>
 
-    <script src="js/scripts.min.js"></script>
+    <?php include 'footer.php'; ?>
 </body>
 </html>
